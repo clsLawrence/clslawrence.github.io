@@ -1,0 +1,270 @@
+ /* Basic Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Merriweather", serif; /* A modern serif font, you can change this */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    color: #333;
+    background-color: #f4f7f6;
+}
+
+/* Header Styling */
+header {
+    height: 10vh; /* 10% of viewport height */
+    background-color: #283e4a;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 1.8em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    justify-content: space-between; /* To space out content if needed */
+}
+
+header .header-left, header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+header .header-left i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main to take up remaining vertical space */
+    display: flex;
+    padding: 20px;
+    gap: 20px; /* Space between the two body sections */
+}
+
+/* Left Column (Sticky) */
+.left-column {
+    flex: 0 0 40%; /* Fixed 40% width, no shrinking or growing */
+    background-color: #ffffff;
+    padding: 10px;/* Change: Jun 3, 2025 */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky; /* Makes the column sticky */
+    top: 20px; /* Distance from the top of the viewport when sticky */
+    align-self: flex-start; /* Ensures it starts at the top of the flex container */
+    max-height: calc(100vh - 40px); /* Adjusts max height to prevent overflow with sticky top */
+    overflow-y: auto; /* Adds scroll if content exceeds max height */
+}
+
+/* Right Column (Scrollable) */
+.right-column {
+    flex: 1; /* Takes up remaining space (60%) */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Allows scrolling if content is too long */
+}
+
+/* Section Styling within Left Column */
+.profile-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+}
+
+.profile-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #0a66c2; /* LinkedIn blue */
+    display: flex;
+    align-items: center;
+}
+
+.profile-section h3 i {
+    margin-right: 10px;
+    font-size: 0.9em; /* Slightly smaller icon */
+}
+
+.profile-section p {
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-size: 0.8em; /* Slightly smaller font */
+}
+
+.profile-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.profile-section ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    /* font-size: 0.8em; /* Slightly smaller font */
+}
+
+.profile-section ul li i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.click-btn {
+  display: inline-block;
+  color: #ffffff;
+  border: none;
+  padding: 0.1em 0.6em;
+  outline: none;
+  text-align: center;
+  font-size: 0.6em;
+  margin: 0 0.2em;
+}
+
+.click-btn:focus,
+.click-btn:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.click-btn:active {
+  color: #e2e2e2;
+}
+
+.click-btn.twitter     { background: #55acee; }
+.click-btn.google-plus { background: #dd4b39; }
+.click-btn.facebook    { background: #3B5998; }
+.click-btn.stumbleupon { background: #EB4823; }
+.click-btn.reddit      { background: #ff5700; }
+.click-btn.hackernews  { background: #ff6600; }
+.click-btn.linkedin    { background: #283e4a; }
+.click-btn.email       { background: #283e4a; }
+
+/* Placeholder styles for content */
+.experience-section {
+    background-color: #f9f9f9;
+    border-left: 2px solid #0a66c2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #000000;
+    font-style: normal;
+}
+
+.company-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.company-img {
+    width:50px; 
+    height:50px; 
+    background-color:#ddd; 
+    border-radius:50%; 
+    flex-shrink: 0; /* Prevents the image from shrinking */
+    margin-right: 10px; /* Space between image and text */
+    vertical-align: middle;
+    border: 2px solid #000000; /* Optional: adds a border to the image */
+}
+
+.job-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    font-weight: 700;
+    padding-bottom: 0.2rem;
+}
+
+.date {
+    font-family: var(--sans-font);
+    color: var(--light-text);
+}
+
+.job-description ul {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.job-description li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Footer Styling */
+.footer {
+    height: 10vh; /* 10% of viewport height */
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.footer i {
+    margin-left: 5px;
+    color: #0a66c2;
+}
+
+/* --- Media Queries for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.3em; /* Smaller font for header on mobile */
+        padding: 0 15px;
+    }
+
+    header .header-right {
+        /* Optionally hide some icons on smaller screens to save space */
+        display: none; 
+    }
+
+    main {
+        flex-direction: column; /* Stack columns vertically */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .left-column, .right-column {
+        flex: 0 0 auto; /* Allow columns to take natural height */
+        width: 100%; /* Take full width */
+        max-height: none; /* Remove max-height constraint */
+        position: static; /* Disable sticky on smaller screens for simplicity */
+        top: auto; /* Reset top property */
+        padding: 15px;
+    }
+
+    .profile-section h3 {
+        font-size: 1.3em; /* Smaller section titles */
+    }
+
+    .profile-section p, .profile-section ul li {
+        font-size: 0.9em; /* Smaller text within sections */
+    }
+
+    .footer {
+        font-size: 0.6em;
+        height: 8vh; /* Slightly smaller footer on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small phones */
+    header .header-left span {
+        font-size: 0.8em; /* Even smaller text for the title */
+    }
+    header .header-right i {
+        font-size: 0.9em; /* Adjust icon size */
+    }
+}
